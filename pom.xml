@@ -6,7 +6,13 @@
 
     <groupId>com.hasan</groupId>
     <artifactId>sampler</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
-    
+    <modules>
+        <module>MongoDB</module>
+        <module>MongoWithSpring</module>
+        <module>TddCoffeeShop</module>
+        <module>MockTestingShoppingCart</module>
+        <module>KafkaProducerConsumer</module>
+    </modules>
 </project>
