@@ -15,7 +15,12 @@ import javax.inject.Inject;
 
 import static net.shop.CoffeeType.EXPRESSO;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.verifyZeroInteractions;
 
 @RunWith(MockitoJUnitRunner.class)
 public class KithenServiceTest {
@@ -33,7 +38,8 @@ public class KithenServiceTest {
         //When coffee is order
         Boolean orderStatus=kitchenService.makeCoffee(EXPRESSO);
         //Then Kitchen should make coffee
-        Assert.assertThat(orderStatus, is(true));
+        assertThat(orderStatus, is(true));
+        verify(supplyService,times(1)).isCoffeeShotAvailable(EXPRESSO);
 
     }
 
@@ -44,7 +50,7 @@ public class KithenServiceTest {
         //When coffee is order
         Boolean orderStatus=kitchenService.makeCoffee(EXPRESSO);
         //Then Kitchen should make coffee
-        Assert.assertThat(orderStatus, is(false));
+        assertThat(orderStatus, is(false));
 
     }
 }

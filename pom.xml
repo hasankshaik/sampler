@@ -14,5 +14,9 @@
         <module>TddCoffeeShop</module>
         <module>MockTestingShoppingCart</module>
         <module>KafkaProducerConsumer</module>
+        <module>designpattern</module>
+        <module>core</module>
+        <module>PairingWithTDD</module>
+        <module>TddWithMockito</module>
     </modules>
 </project>

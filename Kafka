@@ -1,0 +1,22 @@
+/home/linuxbrew/.linuxbrew/etc/kafka/usr/local/Cellar/kafka
+
+--From -kafka/0.11.0.1
+--start kafka server
+bin/zookeeper-server-start libexec/config/zookeeper.properties
+--start zoo keeper
+bin/kafka-server-start libexec/config/server.properties
+
+
+--create topics
+bin/kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+--list topics
+bin/kafka-topics  --list --zookeeper localhost:2181
+--send messsage
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+--consume message
+bin/kafka-console-consumer --zookeeper localhost:2181 --topic test --from-beginning
+
+
+
+-descibe
+bin/kafka-topics --describe --zookeeper localhost:2181  --topic test
